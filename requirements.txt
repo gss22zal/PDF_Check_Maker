@@ -1,0 +1,5 @@
+# PDF generation
+weasyprint>=60.0
+
+# CSV parsing (optional; fallback to stdlib csv)
+pandas>=1.5.0

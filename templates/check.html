@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Чек {{invoice_id}}</title>
+  <style>
+    body { font-family: 'DejaVu Sans', Arial, sans-serif; padding: 30px; font-size: 12px; }
+    .header { margin-bottom: 20px; border-bottom: 2px solid #333; padding-bottom: 10px; }
+    .header h1 { margin: 0; font-size: 20px; }
+    .header p { margin: 4px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    th, td { padding: 8px 10px; border: 1px solid #333; }
+    th { background: #e8e8e8; text-align: left; font-weight: bold; }
+    .num { text-align: center; width: 40px; }
+    .qty, .price, .sum { text-align: right; white-space: nowrap; }
+    .total-row td { font-weight: bold; font-size: 14px; text-align: right; background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Чек {{invoice_id}}</h1>
+    <p><strong>Дата:</strong> {{date}}</p>
+    <p><strong>Клиент:</strong> {{customer}}</p>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th class="num">№</th>
+        <th>Наименование</th>
+        <th class="qty">Кол-во</th>
+        <th class="price">Цена</th>
+        <th class="sum">Сумма</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{items_rows}}
+      <tr class="total-row"><td colspan="5">Итого: {{total}}</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
